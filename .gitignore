@@ -1,0 +1,9 @@
+application/config/config.php
+application/config/database.php
+application/config/mail.config.php
+application/config/mail.php
+application/config/memcache.php
+application/config/salt.php
+application/config/testmail.php
+application/documents/*
+application/carte/*
