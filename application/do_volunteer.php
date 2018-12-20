@@ -122,13 +122,13 @@ else {
 	// Send mail
 	$mailMessage = "Bonjour
 
-Vous avez manifesté votre volonté de participer aux élections législatives de 2017 sous l'étiquette du Parti Pirate.
+Vous avez manifesté votre volonté de participer aux élections européennes de 2019 sous l'étiquette du Parti Pirate.
 Nous l'avons bien pris en compte et nous reviendrons vers vous très prochainement afin d'échanger au sujet de cette candidature.
 
 Piratement,
 L'équipe Élections";
 	
-	$subject = "Votre Candidature aux elections legislatives de 2017 au nom du Parti Pirate";
+	$subject = "Votre Candidature aux elections européennes de 2019 au nom du Parti Pirate";
 	
 	$mail = getMailInstance();
 	
@@ -151,7 +151,7 @@ L'équipe Élections";
 	$mail->setFrom($config["smtp"]["from.address"], $config["smtp"]["from.name"]);
 	$mail->addReplyTo($config["smtp"]["from.address"], $config["smtp"]["from.name"]);
 	
-	$subject = "[2017] Un-e nouvel-le candidat-e";
+	$subject = "[2019] Un-e nouvel-le candidat-e";
 	$mailMessage = "La personne " . $candidature["can_lastname"] . " " . $candidature["can_firstname"] . " a fait acte de candidature.
 
 Informations complémentaires :
@@ -179,7 +179,7 @@ Un bot qui distribue des tâches";
 	$mail->msgHTML(str_replace("\n", "<br>\n", utf8_decode($mailMessage)));
 	$mail->AltBody = utf8_decode($mailMessage);
 	
-	$mail->addAddress("elections@lists.partipirate.org", "Equipe Elections");
+	$mail->addAddress("contact@partipirate.org", "Equipe Elections");
 	
 	$mail->SMTPSecure = "ssl";
 	if ($mail->send()) {

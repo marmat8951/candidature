@@ -251,6 +251,8 @@ $lang["install_autodestruct"] = "Autodestruction";
 $lang["common_sex_female"] = "Femme";
 $lang["common_sex_male"] = "Homme";
 
+$lang["candidate_position_eligible"] = "Place éligible";
+$lang["candidate_position_filler"] = "Remplissage de liste";
 $lang["candidate_position_candidate"] = "Candidat-e";
 $lang["candidate_position_substitute"] = "Suppléant-e";
 $lang["candidate_position_representative"] = "Mandataire";

@@ -122,6 +122,13 @@ $(function() {
 	}
 
 	$("#candidateButtons button").click(function() {
+		switch($(this).val()) {
+			case "eligible":
+			case "filler":
+				$("#candidateButtons button").removeClass("active");
+				break;
+		}
+
 		if ($(this).hasClass("active")) {
 			$(this).removeClass("active");
 		} else {
@@ -136,7 +143,7 @@ $(function() {
 		$("#candidateButtons button.active").each(function() {
 			candidateValue += candidateSeparator;
 
-			if ($(this).val() == "candidate") {
+			if ($(this).val() == "candidate" || $(this).val() == "eligible") {
 				$(".photo-element").show();
 			}
 
@@ -189,5 +196,5 @@ $(function() {
 		}
 	});
 
-	$(".photo-element").show();
+	$(".photo-element").hide();
 });
