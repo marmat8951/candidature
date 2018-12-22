@@ -109,6 +109,11 @@ class CandidateBo {
 			$query .= " AND $this->ID_FIELD = :$this->ID_FIELD \n";
 		}
 
+		if (isset($filters["can_election"])) {
+			$args["can_election"] = $filters["can_election"];
+			$query .= " AND can_election = :can_election \n";
+		}
+
 		$query .= "	ORDER BY can_lastname ASC, can_firstname ASC ";
 
 		$statement = $this->pdo->prepare($query);

@@ -26,7 +26,7 @@ $candidateQuestionBo = CandidateQuestionBo::newInstance($connection, $config);
 $candidates = array();
 
 if ($isConnected) {
-	$candidates = $candidateBo->getByFilters(array());
+	$candidates = $candidateBo->getByFilters(array("can_election" => "eur_2019"));
 }
 
 ?>
@@ -43,9 +43,13 @@ if ($isConnected) {
 
 <div class="text-center">
 	<div id="positions" class="btn-group" role="group" aria-label="...">
+		<button value="eligible" type="button" class="btn btn-default active">Éligible</button>
+		<button value="filler" type="button" class="btn btn-default active">Remplit la liste</button>
+		<!--
 		<button value="candidate" type="button" class="btn btn-default active">Candidat-e</button>
 		<button value="substitute" type="button" class="btn btn-default active">Suppléant-e</button>
 		<button value="representative" type="button" class="btn btn-default active">Mandataire</button>
+		-->
 	</div>
 
 	<div id="sexes" class="btn-group" role="group" aria-label="...">
@@ -77,9 +81,11 @@ if ($isConnected) {
 	<div class="col-md-2">
 		Positions
 	</div>
+	<!--
 	<div class="col-md-2">
 		Circonscriptions
 	</div>
+	-->
 </div>				
 <?php 
 	}
@@ -148,11 +154,13 @@ foreach($candidates as $candidate) {
 				echo implode(", ", $tPositions); 
 			?>
 		</div>
+		<!--
 		<div class="col-md-2">
 			<?php 
 				echo str_replace(",", ", ", $candidate["can_circos"]); 
 			?>
 		</div>
+		-->
 	</div>
 	
 <?php 	
