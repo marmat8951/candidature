@@ -26,7 +26,7 @@ $candidateQuestionBo = CandidateQuestionBo::newInstance($connection, $config);
 $candidate = null;
 if ($isConnected) {
 	$candidate = $candidateBo->getById($_REQUEST["id"]);
-	$candidateQuestions = $candidateQuestionBo->getByFilters(array("cas_candidature_id" => $_REQUEST["id"]));
+	$candidateQuestions = $candidateQuestionBo->getByFilters(array("cas_candidature_id" => $_REQUEST["id"], "cqu_election" => $candidate["can_election"]));
 	
 	$tPositions = array();
 	

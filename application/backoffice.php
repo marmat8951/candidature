@@ -23,8 +23,8 @@ require_once("engine/bo/CandidateAnswerBo.php");
 $candidateBo = CandidateBo::newInstance($connection, $config);
 $candidateAnswerBo = CandidateAnswerBo::newInstance($connection, $config);
 
-$sexPositionStats = $candidateBo->getStats();
-$stats = $candidateAnswerBo->getStats();
+$sexPositionStats = $candidateBo->getStats("eur_2019");
+$stats = $candidateAnswerBo->getStats("eur_2019");
 
 ?>
 

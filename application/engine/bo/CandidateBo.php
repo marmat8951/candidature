@@ -140,18 +140,25 @@ class CandidateBo {
 		return $results;
 	}
 	
-	function getStats() {
+	function getStats($election = null) {
+		$args = array();
 		$query = "	SELECT can_sex, cpo_position, count(DISTINCT can_id) as number_of_persons 
 					FROM candidatures 
-					LEFT JOIN candidature_positions ON cpo_candidature_id = can_id 
-					GROUP BY can_sex,cpo_position WITH ROLLUP	";
-		
+					LEFT JOIN candidature_positions ON cpo_candidature_id = can_id ";
+
+		if ($election) {
+			$query .= "	WHERE can_election = :election";
+			$args["election"] = $election;
+		}
+
+		$query .= "	GROUP BY can_sex,cpo_position WITH ROLLUP	";
+
 		$statement = $this->pdo->prepare($query);
 //		echo showQuery($query, $args);
 
 		$results = array();
 		
-		$statement->execute(array());
+		$statement->execute($args);
 		$results = $statement->fetchAll();
 		
 		foreach($results as $index => $line) {

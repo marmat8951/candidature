@@ -134,18 +134,25 @@ class CandidateAnswerBo {
 		return $results;
 	}
 	
-	function getStats() {
+	function getStats($election = null) {
+		$args = array();
 		$query = "	SELECT
 						can_id, count(cas_id) as number_of_answers
 					FROM
 						candidatures
-					LEFT JOIN candidature_answers ON cas_candidature_id = can_id
-					GROUP BY can_id	";
-		
+					LEFT JOIN candidature_answers ON cas_candidature_id = can_id";
+
+		if ($election) {
+			$query .= "	WHERE can_election = :election";
+			$args["election"] = $election;
+		}
+
+		$query .= "	GROUP BY can_id	";
+
 		$statement = $this->pdo->prepare($query);
 		//		echo showQuery($query, $args);
 		
-		$statement->execute(array());
+		$statement->execute($args);
 		$results = $statement->fetchAll();
 		
 		$stats = array("contacted" => 0, "to_be_contacted" => 0);
