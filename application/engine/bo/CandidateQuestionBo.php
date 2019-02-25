@@ -113,6 +113,11 @@ class CandidateQuestionBo {
 			$query .= " AND $this->ID_FIELD = :$this->ID_FIELD \n";
 		}
 
+		if (isset($filters["cqu_election"])) {
+			$args["cqu_election"] = $filters["cqu_election"];
+			$query .= " AND cqu_election = :cqu_election \n";
+		}
+
 		$query .= "	ORDER BY cqu_order ASC ";
 
 		$statement = $this->pdo->prepare($query);
