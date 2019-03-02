@@ -3,6 +3,7 @@ function toggleCandidates() {
 		var line = $(this);
 
 		var force = 0;
+		var threshold = 0;
 
 		if ($("button[value=candidate]").hasClass("active") && line.hasClass("candidate")) force++;
 		else if ($("button[value=substitute]").hasClass("active") && line.hasClass("substitute")) force++;
@@ -17,7 +18,12 @@ function toggleCandidates() {
 		else if ($("button[value=some-answered]").hasClass("active") && line.hasClass("some-answered")) force++;
 		else if ($("button[value=none-answered]").hasClass("active") && line.hasClass("none-answered")) force++;
 
-		if (force == 3) {
+
+		threshold += ($("#positions button.active").length) ? 1 : 0;
+		threshold += ($("#sexes button.active").length) ? 1 : 0;
+		threshold += ($("#contacted button.active").length) ? 1 : 0;
+
+		if (force >= threshold) {
 			line.show();
 		}
 	});
