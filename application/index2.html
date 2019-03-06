@@ -287,7 +287,7 @@
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                         <p>Pour nous accompagner dans cette campagne, nous avons besoin de votre aide.</p>
 						<p>Notre premier objectif est de récolter 200.000 €</p>
-						<div id="Jauge" class="progress bg-info"></div>
+						<div id="gauge" class="progress bg-info"></div>
                     </div>
                 </div>
                 <div class="row" data-scrollreveal="enter bottom over 1s">
@@ -381,14 +381,14 @@
 
 	<!-- Script to show progress bar - npetitdemange 20190306 -->
 	<script>
-	xmlhttp=new XMLHttpRequest();
+    var	xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET", "https://don.partipirate.org/api/getGauge.php?from_date=2017-01-01&to_date=2020-01-01&amount_path=project%3EadditionalDonation&search=%22project%22:%7B%22code%22:%22BUD_ELECTION_2019%22", false);
 	xmlhttp.send();
 	var data = JSON.parse(xmlhttp.responseText);
 
-	obj = (((data.gau_amount) * 100)/200000);
+	var obj = (((data.gau_amount) * 100)/200000);
 
-	document.getElementById("Jauge").innerHTML = "<div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"" + obj + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:" + obj + "%\"></div><span>" + data.gau_amount + " € / 200 000 €</span>";
+	document.getElementById("gauge").innerHTML = '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="' + obj + '" aria-valuemin="0" aria-valuemax="100" style="width:' + obj + '%"></div><span>' + data.gau_amount + ' € / 200 000 €</span>';
 
 	</script>
 	
