@@ -386,9 +386,9 @@
 	xmlhttp.send();
 	var data = JSON.parse(xmlhttp.responseText);
 
-	var obj = (((data.gau_amount) * 100)/200000);
+	var obj = (((data.gau_amount) * 100)/270000);
 
-	document.getElementById("gauge").innerHTML = '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="' + obj + '" aria-valuemin="0" aria-valuemax="100" style="width:' + obj + '%"></div><span>' + data.gau_amount + ' € / 200 000 €</span>';
+	document.getElementById("gauge").innerHTML = '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="' + obj + '" aria-valuemin="0" aria-valuemax="100" style="width:' + obj + '%"></div><span>' + data.gau_amount + ' € / 270 000 €</span>';
 
 	</script>
 	

@@ -389,6 +389,19 @@
     });
     </script>
 
+	<!-- Script to show progress bar - npetitdemange 20190306 -->
+	<script>
+    var	xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET", "https://don.partipirate.org/api/getGauge.php?from_date=2017-01-01&to_date=2020-01-01&amount_path=project%3EadditionalDonation&search=%22project%22:%7B%22code%22:%22BUD_ELECTION_2019%22", false);
+	xmlhttp.send();
+	var data = JSON.parse(xmlhttp.responseText);
+
+	var obj = (((data.gau_amount) * 100)/270000);
+
+	document.getElementById("gauge").innerHTML = '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="' + obj + '" aria-valuemin="0" aria-valuemax="100" style="width:' + obj + '%"></div><span>' + data.gau_amount + ' € / 270 000 €</span>';
+
+	</script>
+
 </body>
 
 </html>
