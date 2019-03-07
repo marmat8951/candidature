@@ -370,10 +370,14 @@
 	<script src="assets/js/pp.js"></script>
 
     <!-- Script to Activate Formstone Wallpaper jQuery Plugin - Use this script if you want to use an .mp4, .ovg, or .webm video as a background video. -->
-
     <script>
-        backgroundImage = "assets/img/demo-bgs/FondProgramme.jpg";
+    $(".video-bg").wallpaper({
+        source: {
+            poster: "assets/img/demo-bgs/FondProgramme.jpg"
+        }
+    });
     </script>
+
 
 	<!-- Script to show progress bar - npetitdemange 20190306 -->
 	<script>
