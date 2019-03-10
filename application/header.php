@@ -85,6 +85,7 @@ $connection = openConnection();
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <link href="assets/css/min.css.php" rel="stylesheet">
+<link href="assets/css/plugins/fontawesome/css/all.css" rel="stylesheet" type="text/css">
 <!-- 
 <link href="assets/css/jquery.template.css" rel="stylesheet" />
 <link href="assets/css/opentweetbar.css" rel="stylesheet" />

@@ -53,8 +53,8 @@ if ($isConnected) {
 	</div>
 
 	<div id="sexes" class="btn-group" role="group" aria-label="...">
-		<button value="male" type="button" class="btn btn-default active"><i class="fa fa-mars"></i></button>
-		<button value="female" type="button" class="btn btn-default active"><i class="fa fa-venus"></i></button>
+		<button value="male" type="button" class="btn btn-default active"><i class="fas fa-mars"></i></button>
+		<button value="female" type="button" class="btn btn-default active"><i class="fas fa-venus"></i></button>
 	</div>
 
 	<div id="contacted" class="btn-group" role="group" aria-label="...">
@@ -120,7 +120,7 @@ foreach($candidates as $candidate) {
 			
 			<?php 
 				if ($candidate["can_sex"]) {?>
-			<i class="fa fa-<?php 
+			<i class="fas fa-<?php 
 					if ($candidate["can_sex"] == "male") {
 						echo "mars";
 					}
