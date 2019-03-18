@@ -7,7 +7,8 @@ var showDonationsGauge = function(autoRetry){
         url: 'https://don.partipirate.org/api/getGauge.php?from_date=2017-01-01&to_date=2020-01-01&amount_path=project%3EadditionalDonation&search=%22project%22:%7B%22code%22:%22BUD_ELECTION_2019%22',
         success: function(data){
             var objectives = [
-                {"value": 30000, "description": ""},
+                {"value": 27000, "description": "Nous pouvons imprimer 4&nbsp;600&nbsp;000 bulletins, soit pour environ 10&nbsp;% de l'électorat."},
+                {"value": 135000, "description": "Nous pouvons imprimer assez de bulletins pour la moitié de l'électorat."},
                 {"value": 270000, "description": "Nous pouvons imprimer assez de bulletins pour tous les électeurs."},
                 {"value": 400000, "description": "Nous pouvons faire campagne avec affiches, brochures, etc."},
             ];
