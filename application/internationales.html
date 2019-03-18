@@ -32,6 +32,8 @@
     <!-- Note: spectrum.css is the default blue theme. To use another theme, uncomment the one you want and delete the rest, including the default spectrum.css! -->
     <link href="assets/css/spectrum.css" rel="stylesheet">
     <link href="assets/css/pp.css" rel="stylesheet">
+    <link href="assets/css/donations-gauge.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -285,8 +287,7 @@
                     </div>
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                         <p>Pour nous accompagner dans cette campagne, nous avons besoin de votre aide.</p>
-						<p>Notre premier objectif est de récolter 270.000 €</p>
-						<div id="gauge" class="progress bg-info"></div>
+						<div id="donations-gauge-wrapper"></div>
                     </div>
                 </div>
                 <div class="row" data-scrollreveal="enter bottom over 1s">
@@ -372,6 +373,7 @@
 
     <script src="assets/js/min.js"></script>
     <script src="assets/js/pp.js"></script>
+    <script src="assets/js/donations-gauge.js"></script>
 
     <!-- Script to Activate Formstone Wallpaper jQuery Plugin - Use this script if you want to use an .mp4, .ovg, or .webm video as a background video. -->
     <script>
@@ -381,20 +383,5 @@
         }
     });
     </script>
-
-		<!-- Script to show progress bar - npetitdemange 20190306 -->
-	<script>
-    var	xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET", "https://don.partipirate.org/api/getGauge.php?from_date=2017-01-01&to_date=2020-01-01&amount_path=project%3EadditionalDonation&search=%22project%22:%7B%22code%22:%22BUD_ELECTION_2019%22", false);
-	xmlhttp.send();
-	var data = JSON.parse(xmlhttp.responseText);
-
-	var obj = (((data.gau_amount) * 100)/270000);
-
-	document.getElementById("gauge").innerHTML = '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="' + obj + '" aria-valuemin="0" aria-valuemax="100" style="width:' + obj + '%"></div><span>' + data.gau_amount + ' € / 270 000 €</span>';
-
-	</script>
-
-
 </body>
 </html>
